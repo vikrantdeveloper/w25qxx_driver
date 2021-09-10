@@ -1,0 +1,529 @@
+15:34:34 **** Incremental Build of configuration Debug for project usb_flash ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32L053xx -DDEBUG -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I"C:/Users/vikrantt/STM32CubeIDE/workspace_1.5.1/usb_flash/w25qxx_flash" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "usb_flash.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\vikrantt\STM32CubeIDE\workspace_1.5.1\usb_flash\STM32L053R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="usb_flash.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: usb_flash.elf
+ 
+arm-none-eabi-objdump -h -S  usb_flash.elf  > "usb_flash.list"
+arm-none-eabi-objcopy  -O binary  usb_flash.elf  "usb_flash.bin"
+arm-none-eabi-size   usb_flash.elf 
+   text	   data	    bss	    dec	    hex	filename
+  41880	    372	   4380	  46632	   b628	usb_flash.elf
+Finished building: default.size.stdout
+ 
+Finished building: usb_flash.bin
+ 
+Finished building: usb_flash.list
+ 
+15:34:39 **** Incremental Build of configuration Debug for project usb_flash ****
+make -j8 all 
+arm-none-eabi-size   usb_flash.elf 
+   text	   data	    bss	    dec	    hex	filename
+  41880	    372	   4380	  46632	   b628	usb_flash.elf
+Finished building: default.size.stdout
+ 
+15:36:27 **** Incremental Build of configuration Debug for project usb_flash ****
+make -j8 all 
+arm-none-eabi-gcc "../w25qxx_flash/w25qxx.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32L053xx -DDEBUG -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"w25qxx_flash/w25qxx.d" -MT"w25qxx_flash/w25qxx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "w25qxx_flash/w25qxx.o"
+../w25qxx_flash/w25qxx.c: In function 'W25qxx_Init':
+../w25qxx_flash/w25qxx.c:153:27: warning: format '%X' expects argument of type 'unsigned int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+      printf("w25qxx ID:0x%X\r\n", id);
+                          ~^
+                          %lX
+../w25qxx_flash/w25qxx.c:248:31: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+   printf("w25qxx Page Count: %d\r\n",w25qxx.PageCount);
+                              ~^      ~~~~~~~~~~~~~~~~
+                              %ld
+../w25qxx_flash/w25qxx.c:249:32: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+   printf("w25qxx Sector Size: %d Bytes\r\n",w25qxx.SectorSize);
+                               ~^            ~~~~~~~~~~~~~~~~~
+                               %ld
+../w25qxx_flash/w25qxx.c:250:33: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+   printf("w25qxx Sector Count: %d\r\n",w25qxx.SectorCount);
+                                ~^      ~~~~~~~~~~~~~~~~~~
+                                %ld
+../w25qxx_flash/w25qxx.c:251:31: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+   printf("w25qxx Block Size: %d Bytes\r\n",w25qxx.BlockSize);
+                              ~^            ~~~~~~~~~~~~~~~~
+                              %ld
+../w25qxx_flash/w25qxx.c:252:32: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+   printf("w25qxx Block Count: %d\r\n",w25qxx.BlockCount);
+                               ~^      ~~~~~~~~~~~~~~~~~
+                               %ld
+../w25qxx_flash/w25qxx.c:253:29: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+   printf("w25qxx Capacity: %d KiloBytes\r\n",w25qxx.CapacityInKiloByte);
+                            ~^                ~~~~~~~~~~~~~~~~~~~~~~~~~
+                            %ld
+../w25qxx_flash/w25qxx.c: In function 'W25qxx_EraseChip':
+../w25qxx_flash/w25qxx.c:281:41: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+   printf("w25qxx EraseBlock done after %d ms!\r\n",HAL_GetTick()-StartTime);
+                                        ~^          ~~~~~~~~~~~~~~~~~~~~~~~
+                                        %ld
+../w25qxx_flash/w25qxx.c: In function 'W25qxx_EraseSector':
+../w25qxx_flash/w25qxx.c:295:31: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+   printf("w25qxx EraseSector %d Begin...\r\n",SectorAddr);
+                              ~^
+                              %ld
+../w25qxx_flash/w25qxx.c:320:42: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+   printf("w25qxx EraseSector done after %d ms\r\n",HAL_GetTick()-StartTime);
+                                         ~^         ~~~~~~~~~~~~~~~~~~~~~~~
+                                         %ld
+../w25qxx_flash/w25qxx.c: In function 'W25qxx_EraseBlock':
+../w25qxx_flash/w25qxx.c:334:30: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+   printf("w25qxx EraseBlock %d Begin...\r\n",BlockAddr);
+                             ~^
+                             %ld
+../w25qxx_flash/w25qxx.c:359:41: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+   printf("w25qxx EraseBlock done after %d ms\r\n",HAL_GetTick()-StartTime);
+                                        ~^         ~~~~~~~~~~~~~~~~~~~~~~~
+                                        %ld
+../w25qxx_flash/w25qxx.c: In function 'W25qxx_IsEmptyPage':
+../w25qxx_flash/w25qxx.c:402:29: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+   printf("w25qxx CheckPage:%d, Offset:%d, Bytes:%d begin...\r\n",Page_Address,OffsetInByte,NumByteToCheck_up_to_PageSize);
+                            ~^
+                            %ld
+../w25qxx_flash/w25qxx.c:402:40: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+   printf("w25qxx CheckPage:%d, Offset:%d, Bytes:%d begin...\r\n",Page_Address,OffsetInByte,NumByteToCheck_up_to_PageSize);
+                                       ~^
+                                       %ld
+../w25qxx_flash/w25qxx.c:402:50: warning: format '%d' expects argument of type 'int', but argument 4 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+   printf("w25qxx CheckPage:%d, Offset:%d, Bytes:%d begin...\r\n",Page_Address,OffsetInByte,NumByteToCheck_up_to_PageSize);
+                                                 ~^
+                                                 %ld
+../w25qxx_flash/w25qxx.c:450:41: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+   printf("w25qxx CheckPage is Empty in %d ms\r\n",HAL_GetTick()-StartTime);
+                                        ~^         ~~~~~~~~~~~~~~~~~~~~~~~
+                                        %ld
+../w25qxx_flash/w25qxx.c:457:45: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+   printf("w25qxx CheckPage is Not Empty in %d ms\r\n",HAL_GetTick()-StartTime);
+                                            ~^         ~~~~~~~~~~~~~~~~~~~~~~~
+                                            %ld
+../w25qxx_flash/w25qxx.c: In function 'W25qxx_IsEmptySector':
+../w25qxx_flash/w25qxx.c:472:31: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+   printf("w25qxx CheckSector:%d, Offset:%d, Bytes:%d begin...\r\n",Sector_Address,OffsetInByte,NumByteToCheck_up_to_SectorSize);
+                              ~^
+                              %ld
+../w25qxx_flash/w25qxx.c:472:42: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+   printf("w25qxx CheckSector:%d, Offset:%d, Bytes:%d begin...\r\n",Sector_Address,OffsetInByte,NumByteToCheck_up_to_SectorSize);
+                                         ~^
+                                         %ld
+../w25qxx_flash/w25qxx.c:472:52: warning: format '%d' expects argument of type 'int', but argument 4 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+   printf("w25qxx CheckSector:%d, Offset:%d, Bytes:%d begin...\r\n",Sector_Address,OffsetInByte,NumByteToCheck_up_to_SectorSize);
+                                                   ~^
+                                                   %ld
+../w25qxx_flash/w25qxx.c:519:43: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+   printf("w25qxx CheckSector is Empty in %d ms\r\n",HAL_GetTick()-StartTime);
+                                          ~^         ~~~~~~~~~~~~~~~~~~~~~~~
+                                          %ld
+../w25qxx_flash/w25qxx.c:526:47: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+   printf("w25qxx CheckSector is Not Empty in %d ms\r\n",HAL_GetTick()-StartTime);
+                                              ~^         ~~~~~~~~~~~~~~~~~~~~~~~
+                                              %ld
+../w25qxx_flash/w25qxx.c: In function 'W25qxx_IsEmptyBlock':
+../w25qxx_flash/w25qxx.c:541:29: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+  printf("w25qxx CheckBlock:%d, Offset:%d, Bytes:%d begin...\r\n",Block_Address,OffsetInByte,NumByteToCheck_up_to_BlockSize);
+                            ~^
+                            %ld
+../w25qxx_flash/w25qxx.c:541:40: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+  printf("w25qxx CheckBlock:%d, Offset:%d, Bytes:%d begin...\r\n",Block_Address,OffsetInByte,NumByteToCheck_up_to_BlockSize);
+                                       ~^
+                                       %ld
+../w25qxx_flash/w25qxx.c:541:50: warning: format '%d' expects argument of type 'int', but argument 4 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+  printf("w25qxx CheckBlock:%d, Offset:%d, Bytes:%d begin...\r\n",Block_Address,OffsetInByte,NumByteToCheck_up_to_BlockSize);
+                                                 ~^
+                                                 %ld
+../w25qxx_flash/w25qxx.c:588:41: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+  printf("w25qxx CheckBlock is Empty in %d ms\r\n",HAL_GetTick()-StartTime);
+                                        ~^         ~~~~~~~~~~~~~~~~~~~~~~~
+                                        %ld
+../w25qxx_flash/w25qxx.c:595:45: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+  printf("w25qxx CheckBlock is Not Empty in %d ms\r\n",HAL_GetTick()-StartTime);
+                                            ~^         ~~~~~~~~~~~~~~~~~~~~~~~
+                                            %ld
+../w25qxx_flash/w25qxx.c: In function 'W25qxx_WriteByte':
+../w25qxx_flash/w25qxx.c:609:46: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+  printf("w25qxx WriteByte 0x%02X at address %d begin...",pBuffer,WriteAddr_inBytes);
+                                             ~^
+                                             %ld
+../w25qxx_flash/w25qxx.c:624:39: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+  printf("w25qxx WriteByte done after %d ms\r\n",HAL_GetTick()-StartTime);
+                                      ~^         ~~~~~~~~~~~~~~~~~~~~~~~
+                                      %ld
+../w25qxx_flash/w25qxx.c: In function 'W25qxx_WritePage':
+../w25qxx_flash/w25qxx.c:639:29: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+   printf("w25qxx WritePage:%d, Offset:%d ,Writes %d Bytes, begin...\r\n",Page_Address,OffsetInByte,NumByteToWrite_up_to_PageSize);
+                            ~^
+                            %ld
+../w25qxx_flash/w25qxx.c:639:40: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+   printf("w25qxx WritePage:%d, Offset:%d ,Writes %d Bytes, begin...\r\n",Page_Address,OffsetInByte,NumByteToWrite_up_to_PageSize);
+                                       ~^
+                                       %ld
+../w25qxx_flash/w25qxx.c:639:51: warning: format '%d' expects argument of type 'int', but argument 4 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+   printf("w25qxx WritePage:%d, Offset:%d ,Writes %d Bytes, begin...\r\n",Page_Address,OffsetInByte,NumByteToWrite_up_to_PageSize);
+                                                  ~^
+                                                  %ld
+../w25qxx_flash/w25qxx.c:670:39: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+  printf("w25qxx WritePage done after %d ms\r\n",StartTime);
+                                      ~^
+                                      %ld
+../w25qxx_flash/w25qxx.c: In function 'W25qxx_WriteSector':
+../w25qxx_flash/w25qxx.c:683:33: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+  printf("+++w25qxx WriteSector:%d, Offset:%d ,Write %d Bytes, begin...\r\n",Sector_Address,OffsetInByte,NumByteToWrite_up_to_SectorSize);
+                                ~^
+                                %ld
+../w25qxx_flash/w25qxx.c:683:44: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+  printf("+++w25qxx WriteSector:%d, Offset:%d ,Write %d Bytes, begin...\r\n",Sector_Address,OffsetInByte,NumByteToWrite_up_to_SectorSize);
+                                           ~^
+                                           %ld
+../w25qxx_flash/w25qxx.c:683:54: warning: format '%d' expects argument of type 'int', but argument 4 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+  printf("+++w25qxx WriteSector:%d, Offset:%d ,Write %d Bytes, begin...\r\n",Sector_Address,OffsetInByte,NumByteToWrite_up_to_SectorSize);
+                                                     ~^
+                                                     %ld
+../w25qxx_flash/w25qxx.c: In function 'W25qxx_WriteBlock':
+../w25qxx_flash/w25qxx.c:722:32: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+  printf("+++w25qxx WriteBlock:%d, Offset:%d ,Write %d Bytes, begin...\r\n",Block_Address,OffsetInByte,NumByteToWrite_up_to_BlockSize);
+                               ~^
+                               %ld
+../w25qxx_flash/w25qxx.c:722:43: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+  printf("+++w25qxx WriteBlock:%d, Offset:%d ,Write %d Bytes, begin...\r\n",Block_Address,OffsetInByte,NumByteToWrite_up_to_BlockSize);
+                                          ~^
+                                          %ld
+../w25qxx_flash/w25qxx.c:722:53: warning: format '%d' expects argument of type 'int', but argument 4 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+  printf("+++w25qxx WriteBlock:%d, Offset:%d ,Write %d Bytes, begin...\r\n",Block_Address,OffsetInByte,NumByteToWrite_up_to_BlockSize);
+                                                    ~^
+                                                    %ld
+../w25qxx_flash/w25qxx.c: In function 'W25qxx_ReadByte':
+../w25qxx_flash/w25qxx.c:763:38: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+  printf("w25qxx ReadByte at address %d begin...\r\n",Bytes_Address);
+                                     ~^
+                                     %ld
+../w25qxx_flash/w25qxx.c:776:45: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+  printf("w25qxx ReadByte 0x%02X done after %d ms\r\n",*pBuffer,HAL_GetTick()-StartTime);
+                                            ~^                  ~~~~~~~~~~~~~~~~~~~~~~~
+                                            %ld
+../w25qxx_flash/w25qxx.c: In function 'W25qxx_ReadBytes':
+../w25qxx_flash/w25qxx.c:788:39: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+  printf("w25qxx ReadBytes at Address:%d, %d Bytes  begin...\r\n",ReadAddr,NumByteToRead);
+                                      ~^
+                                      %ld
+../w25qxx_flash/w25qxx.c:788:43: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+  printf("w25qxx ReadBytes at Address:%d, %d Bytes  begin...\r\n",ReadAddr,NumByteToRead);
+                                          ~^
+                                          %ld
+../w25qxx_flash/w25qxx.c:812:39: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+  printf("w25qxx ReadBytes done after %d ms\r\n",StartTime);
+                                      ~^
+                                      %ld
+../w25qxx_flash/w25qxx.c: In function 'W25qxx_ReadPage':
+../w25qxx_flash/w25qxx.c:832:28: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+   printf("w25qxx ReadPage:%d, Offset:%d ,Read %d Bytes, begin...\r\n",Page_Address,OffsetInByte,NumByteToRead_up_to_PageSize);
+                           ~^
+                           %ld
+../w25qxx_flash/w25qxx.c:832:39: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+   printf("w25qxx ReadPage:%d, Offset:%d ,Read %d Bytes, begin...\r\n",Page_Address,OffsetInByte,NumByteToRead_up_to_PageSize);
+                                      ~^
+                                      %ld
+../w25qxx_flash/w25qxx.c:832:48: warning: format '%d' expects argument of type 'int', but argument 4 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+   printf("w25qxx ReadPage:%d, Offset:%d ,Read %d Bytes, begin...\r\n",Page_Address,OffsetInByte,NumByteToRead_up_to_PageSize);
+                                               ~^
+                                               %ld
+../w25qxx_flash/w25qxx.c:861:39: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+   printf("w25qxx ReadPage done after %d ms\r\n",StartTime);
+                                      ~^
+                                      %ld
+../w25qxx_flash/w25qxx.c: In function 'W25qxx_ReadSector':
+../w25qxx_flash/w25qxx.c:873:32: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+  printf("+++w25qxx ReadSector:%d, Offset:%d ,Read %d Bytes, begin...\r\n",Sector_Address,OffsetInByte,NumByteToRead_up_to_SectorSize);
+                               ~^
+                               %ld
+../w25qxx_flash/w25qxx.c:873:43: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+  printf("+++w25qxx ReadSector:%d, Offset:%d ,Read %d Bytes, begin...\r\n",Sector_Address,OffsetInByte,NumByteToRead_up_to_SectorSize);
+                                          ~^
+                                          %ld
+../w25qxx_flash/w25qxx.c:873:52: warning: format '%d' expects argument of type 'int', but argument 4 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+  printf("+++w25qxx ReadSector:%d, Offset:%d ,Read %d Bytes, begin...\r\n",Sector_Address,OffsetInByte,NumByteToRead_up_to_SectorSize);
+                                                   ~^
+                                                   %ld
+../w25qxx_flash/w25qxx.c: In function 'W25qxx_ReadBlock':
+../w25qxx_flash/w25qxx.c:912:32: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+   printf("+++w25qxx ReadBlock:%d, Offset:%d ,Read %d Bytes, begin...\r\n",Block_Address,OffsetInByte,NumByteToRead_up_to_BlockSize);
+                               ~^
+                               %ld
+../w25qxx_flash/w25qxx.c:912:43: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+   printf("+++w25qxx ReadBlock:%d, Offset:%d ,Read %d Bytes, begin...\r\n",Block_Address,OffsetInByte,NumByteToRead_up_to_BlockSize);
+                                          ~^
+                                          %ld
+../w25qxx_flash/w25qxx.c:912:52: warning: format '%d' expects argument of type 'int', but argument 4 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+   printf("+++w25qxx ReadBlock:%d, Offset:%d ,Read %d Bytes, begin...\r\n",Block_Address,OffsetInByte,NumByteToRead_up_to_BlockSize);
+                                                   ~^
+                                                   %ld
+arm-none-eabi-gcc -o "usb_flash.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\vikrantt\STM32CubeIDE\workspace_1.5.1\usb_flash\STM32L053R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="usb_flash.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: usb_flash.elf
+ 
+arm-none-eabi-objdump -h -S  usb_flash.elf  > "usb_flash.list"
+arm-none-eabi-objcopy  -O binary  usb_flash.elf  "usb_flash.bin"
+arm-none-eabi-size   usb_flash.elf 
+   text	   data	    bss	    dec	    hex	filename
+  48968	    472	   4400	  53840	   d250	usb_flash.elf
+Finished building: default.size.stdout
+ 
+Finished building: usb_flash.bin
+ 
+Finished building: usb_flash.list
+ 
+15:46:52 **** Incremental Build of configuration Debug for project usb_flash ****
+make -j8 all 
+arm-none-eabi-size   usb_flash.elf 
+   text	   data	    bss	    dec	    hex	filename
+  48968	    472	   4400	  53840	   d250	usb_flash.elf
+Finished building: default.size.stdout
+ 
+15:48:24 **** Incremental Build of configuration Debug for project usb_flash ****
+make -j8 all 
+arm-none-eabi-gcc "../w25qxx_flash/w25qxx.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32L053xx -DDEBUG -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"w25qxx_flash/w25qxx.d" -MT"w25qxx_flash/w25qxx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "w25qxx_flash/w25qxx.o"
+../w25qxx_flash/w25qxx.c: In function 'W25qxx_Init':
+../w25qxx_flash/w25qxx.c:153:27: warning: format '%X' expects argument of type 'unsigned int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+      printf("w25qxx ID:0x%X\r\n", id);
+                          ~^
+                          %lX
+../w25qxx_flash/w25qxx.c:248:31: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+   printf("w25qxx Page Count: %d\r\n",w25qxx.PageCount);
+                              ~^      ~~~~~~~~~~~~~~~~
+                              %ld
+../w25qxx_flash/w25qxx.c:249:32: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+   printf("w25qxx Sector Size: %d Bytes\r\n",w25qxx.SectorSize);
+                               ~^            ~~~~~~~~~~~~~~~~~
+                               %ld
+../w25qxx_flash/w25qxx.c:250:33: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+   printf("w25qxx Sector Count: %d\r\n",w25qxx.SectorCount);
+                                ~^      ~~~~~~~~~~~~~~~~~~
+                                %ld
+../w25qxx_flash/w25qxx.c:251:31: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+   printf("w25qxx Block Size: %d Bytes\r\n",w25qxx.BlockSize);
+                              ~^            ~~~~~~~~~~~~~~~~
+                              %ld
+../w25qxx_flash/w25qxx.c:252:32: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+   printf("w25qxx Block Count: %d\r\n",w25qxx.BlockCount);
+                               ~^      ~~~~~~~~~~~~~~~~~
+                               %ld
+../w25qxx_flash/w25qxx.c:253:29: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+   printf("w25qxx Capacity: %d KiloBytes\r\n",w25qxx.CapacityInKiloByte);
+                            ~^                ~~~~~~~~~~~~~~~~~~~~~~~~~
+                            %ld
+../w25qxx_flash/w25qxx.c: In function 'W25qxx_EraseChip':
+../w25qxx_flash/w25qxx.c:283:41: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+   printf("w25qxx EraseBlock done after %d ms!\r\n",HAL_GetTick()-StartTime);
+                                        ~^          ~~~~~~~~~~~~~~~~~~~~~~~
+                                        %ld
+../w25qxx_flash/w25qxx.c: In function 'W25qxx_EraseSector':
+../w25qxx_flash/w25qxx.c:297:31: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+   printf("w25qxx EraseSector %d Begin...\r\n",SectorAddr);
+                              ~^
+                              %ld
+../w25qxx_flash/w25qxx.c:322:42: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+   printf("w25qxx EraseSector done after %d ms\r\n",HAL_GetTick()-StartTime);
+                                         ~^         ~~~~~~~~~~~~~~~~~~~~~~~
+                                         %ld
+../w25qxx_flash/w25qxx.c: In function 'W25qxx_EraseBlock':
+../w25qxx_flash/w25qxx.c:336:30: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+   printf("w25qxx EraseBlock %d Begin...\r\n",BlockAddr);
+                             ~^
+                             %ld
+../w25qxx_flash/w25qxx.c:361:41: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+   printf("w25qxx EraseBlock done after %d ms\r\n",HAL_GetTick()-StartTime);
+                                        ~^         ~~~~~~~~~~~~~~~~~~~~~~~
+                                        %ld
+../w25qxx_flash/w25qxx.c: In function 'W25qxx_IsEmptyPage':
+../w25qxx_flash/w25qxx.c:404:29: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+   printf("w25qxx CheckPage:%d, Offset:%d, Bytes:%d begin...\r\n",Page_Address,OffsetInByte,NumByteToCheck_up_to_PageSize);
+                            ~^
+                            %ld
+../w25qxx_flash/w25qxx.c:404:40: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+   printf("w25qxx CheckPage:%d, Offset:%d, Bytes:%d begin...\r\n",Page_Address,OffsetInByte,NumByteToCheck_up_to_PageSize);
+                                       ~^
+                                       %ld
+../w25qxx_flash/w25qxx.c:404:50: warning: format '%d' expects argument of type 'int', but argument 4 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+   printf("w25qxx CheckPage:%d, Offset:%d, Bytes:%d begin...\r\n",Page_Address,OffsetInByte,NumByteToCheck_up_to_PageSize);
+                                                 ~^
+                                                 %ld
+../w25qxx_flash/w25qxx.c:452:41: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+   printf("w25qxx CheckPage is Empty in %d ms\r\n",HAL_GetTick()-StartTime);
+                                        ~^         ~~~~~~~~~~~~~~~~~~~~~~~
+                                        %ld
+../w25qxx_flash/w25qxx.c:459:45: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+   printf("w25qxx CheckPage is Not Empty in %d ms\r\n",HAL_GetTick()-StartTime);
+                                            ~^         ~~~~~~~~~~~~~~~~~~~~~~~
+                                            %ld
+../w25qxx_flash/w25qxx.c: In function 'W25qxx_IsEmptySector':
+../w25qxx_flash/w25qxx.c:474:31: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+   printf("w25qxx CheckSector:%d, Offset:%d, Bytes:%d begin...\r\n",Sector_Address,OffsetInByte,NumByteToCheck_up_to_SectorSize);
+                              ~^
+                              %ld
+../w25qxx_flash/w25qxx.c:474:42: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+   printf("w25qxx CheckSector:%d, Offset:%d, Bytes:%d begin...\r\n",Sector_Address,OffsetInByte,NumByteToCheck_up_to_SectorSize);
+                                         ~^
+                                         %ld
+../w25qxx_flash/w25qxx.c:474:52: warning: format '%d' expects argument of type 'int', but argument 4 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+   printf("w25qxx CheckSector:%d, Offset:%d, Bytes:%d begin...\r\n",Sector_Address,OffsetInByte,NumByteToCheck_up_to_SectorSize);
+                                                   ~^
+                                                   %ld
+../w25qxx_flash/w25qxx.c:521:43: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+   printf("w25qxx CheckSector is Empty in %d ms\r\n",HAL_GetTick()-StartTime);
+                                          ~^         ~~~~~~~~~~~~~~~~~~~~~~~
+                                          %ld
+../w25qxx_flash/w25qxx.c:528:47: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+   printf("w25qxx CheckSector is Not Empty in %d ms\r\n",HAL_GetTick()-StartTime);
+                                              ~^         ~~~~~~~~~~~~~~~~~~~~~~~
+                                              %ld
+../w25qxx_flash/w25qxx.c: In function 'W25qxx_IsEmptyBlock':
+../w25qxx_flash/w25qxx.c:543:29: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+  printf("w25qxx CheckBlock:%d, Offset:%d, Bytes:%d begin...\r\n",Block_Address,OffsetInByte,NumByteToCheck_up_to_BlockSize);
+                            ~^
+                            %ld
+../w25qxx_flash/w25qxx.c:543:40: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+  printf("w25qxx CheckBlock:%d, Offset:%d, Bytes:%d begin...\r\n",Block_Address,OffsetInByte,NumByteToCheck_up_to_BlockSize);
+                                       ~^
+                                       %ld
+../w25qxx_flash/w25qxx.c:543:50: warning: format '%d' expects argument of type 'int', but argument 4 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+  printf("w25qxx CheckBlock:%d, Offset:%d, Bytes:%d begin...\r\n",Block_Address,OffsetInByte,NumByteToCheck_up_to_BlockSize);
+                                                 ~^
+                                                 %ld
+../w25qxx_flash/w25qxx.c:590:41: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+  printf("w25qxx CheckBlock is Empty in %d ms\r\n",HAL_GetTick()-StartTime);
+                                        ~^         ~~~~~~~~~~~~~~~~~~~~~~~
+                                        %ld
+../w25qxx_flash/w25qxx.c:597:45: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+  printf("w25qxx CheckBlock is Not Empty in %d ms\r\n",HAL_GetTick()-StartTime);
+                                            ~^         ~~~~~~~~~~~~~~~~~~~~~~~
+                                            %ld
+../w25qxx_flash/w25qxx.c: In function 'W25qxx_WriteByte':
+../w25qxx_flash/w25qxx.c:611:46: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+  printf("w25qxx WriteByte 0x%02X at address %d begin...",pBuffer,WriteAddr_inBytes);
+                                             ~^
+                                             %ld
+../w25qxx_flash/w25qxx.c:626:39: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+  printf("w25qxx WriteByte done after %d ms\r\n",HAL_GetTick()-StartTime);
+                                      ~^         ~~~~~~~~~~~~~~~~~~~~~~~
+                                      %ld
+../w25qxx_flash/w25qxx.c: In function 'W25qxx_WritePage':
+../w25qxx_flash/w25qxx.c:641:29: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+   printf("w25qxx WritePage:%d, Offset:%d ,Writes %d Bytes, begin...\r\n",Page_Address,OffsetInByte,NumByteToWrite_up_to_PageSize);
+                            ~^
+                            %ld
+../w25qxx_flash/w25qxx.c:641:40: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+   printf("w25qxx WritePage:%d, Offset:%d ,Writes %d Bytes, begin...\r\n",Page_Address,OffsetInByte,NumByteToWrite_up_to_PageSize);
+                                       ~^
+                                       %ld
+../w25qxx_flash/w25qxx.c:641:51: warning: format '%d' expects argument of type 'int', but argument 4 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+   printf("w25qxx WritePage:%d, Offset:%d ,Writes %d Bytes, begin...\r\n",Page_Address,OffsetInByte,NumByteToWrite_up_to_PageSize);
+                                                  ~^
+                                                  %ld
+../w25qxx_flash/w25qxx.c:672:39: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+  printf("w25qxx WritePage done after %d ms\r\n",StartTime);
+                                      ~^
+                                      %ld
+../w25qxx_flash/w25qxx.c: In function 'W25qxx_WriteSector':
+../w25qxx_flash/w25qxx.c:685:33: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+  printf("+++w25qxx WriteSector:%d, Offset:%d ,Write %d Bytes, begin...\r\n",Sector_Address,OffsetInByte,NumByteToWrite_up_to_SectorSize);
+                                ~^
+                                %ld
+../w25qxx_flash/w25qxx.c:685:44: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+  printf("+++w25qxx WriteSector:%d, Offset:%d ,Write %d Bytes, begin...\r\n",Sector_Address,OffsetInByte,NumByteToWrite_up_to_SectorSize);
+                                           ~^
+                                           %ld
+../w25qxx_flash/w25qxx.c:685:54: warning: format '%d' expects argument of type 'int', but argument 4 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+  printf("+++w25qxx WriteSector:%d, Offset:%d ,Write %d Bytes, begin...\r\n",Sector_Address,OffsetInByte,NumByteToWrite_up_to_SectorSize);
+                                                     ~^
+                                                     %ld
+../w25qxx_flash/w25qxx.c: In function 'W25qxx_WriteBlock':
+../w25qxx_flash/w25qxx.c:724:32: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+  printf("+++w25qxx WriteBlock:%d, Offset:%d ,Write %d Bytes, begin...\r\n",Block_Address,OffsetInByte,NumByteToWrite_up_to_BlockSize);
+                               ~^
+                               %ld
+../w25qxx_flash/w25qxx.c:724:43: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+  printf("+++w25qxx WriteBlock:%d, Offset:%d ,Write %d Bytes, begin...\r\n",Block_Address,OffsetInByte,NumByteToWrite_up_to_BlockSize);
+                                          ~^
+                                          %ld
+../w25qxx_flash/w25qxx.c:724:53: warning: format '%d' expects argument of type 'int', but argument 4 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+  printf("+++w25qxx WriteBlock:%d, Offset:%d ,Write %d Bytes, begin...\r\n",Block_Address,OffsetInByte,NumByteToWrite_up_to_BlockSize);
+                                                    ~^
+                                                    %ld
+../w25qxx_flash/w25qxx.c: In function 'W25qxx_ReadByte':
+../w25qxx_flash/w25qxx.c:765:38: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+  printf("w25qxx ReadByte at address %d begin...\r\n",Bytes_Address);
+                                     ~^
+                                     %ld
+../w25qxx_flash/w25qxx.c:778:45: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+  printf("w25qxx ReadByte 0x%02X done after %d ms\r\n",*pBuffer,HAL_GetTick()-StartTime);
+                                            ~^                  ~~~~~~~~~~~~~~~~~~~~~~~
+                                            %ld
+../w25qxx_flash/w25qxx.c: In function 'W25qxx_ReadBytes':
+../w25qxx_flash/w25qxx.c:790:39: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+  printf("w25qxx ReadBytes at Address:%d, %d Bytes  begin...\r\n",ReadAddr,NumByteToRead);
+                                      ~^
+                                      %ld
+../w25qxx_flash/w25qxx.c:790:43: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+  printf("w25qxx ReadBytes at Address:%d, %d Bytes  begin...\r\n",ReadAddr,NumByteToRead);
+                                          ~^
+                                          %ld
+../w25qxx_flash/w25qxx.c:814:39: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+  printf("w25qxx ReadBytes done after %d ms\r\n",StartTime);
+                                      ~^
+                                      %ld
+../w25qxx_flash/w25qxx.c: In function 'W25qxx_ReadPage':
+../w25qxx_flash/w25qxx.c:834:28: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+   printf("w25qxx ReadPage:%d, Offset:%d ,Read %d Bytes, begin...\r\n",Page_Address,OffsetInByte,NumByteToRead_up_to_PageSize);
+                           ~^
+                           %ld
+../w25qxx_flash/w25qxx.c:834:39: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+   printf("w25qxx ReadPage:%d, Offset:%d ,Read %d Bytes, begin...\r\n",Page_Address,OffsetInByte,NumByteToRead_up_to_PageSize);
+                                      ~^
+                                      %ld
+../w25qxx_flash/w25qxx.c:834:48: warning: format '%d' expects argument of type 'int', but argument 4 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+   printf("w25qxx ReadPage:%d, Offset:%d ,Read %d Bytes, begin...\r\n",Page_Address,OffsetInByte,NumByteToRead_up_to_PageSize);
+                                               ~^
+                                               %ld
+../w25qxx_flash/w25qxx.c:863:39: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+   printf("w25qxx ReadPage done after %d ms\r\n",StartTime);
+                                      ~^
+                                      %ld
+../w25qxx_flash/w25qxx.c: In function 'W25qxx_ReadSector':
+../w25qxx_flash/w25qxx.c:875:32: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+  printf("+++w25qxx ReadSector:%d, Offset:%d ,Read %d Bytes, begin...\r\n",Sector_Address,OffsetInByte,NumByteToRead_up_to_SectorSize);
+                               ~^
+                               %ld
+../w25qxx_flash/w25qxx.c:875:43: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+  printf("+++w25qxx ReadSector:%d, Offset:%d ,Read %d Bytes, begin...\r\n",Sector_Address,OffsetInByte,NumByteToRead_up_to_SectorSize);
+                                          ~^
+                                          %ld
+../w25qxx_flash/w25qxx.c:875:52: warning: format '%d' expects argument of type 'int', but argument 4 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+  printf("+++w25qxx ReadSector:%d, Offset:%d ,Read %d Bytes, begin...\r\n",Sector_Address,OffsetInByte,NumByteToRead_up_to_SectorSize);
+                                                   ~^
+                                                   %ld
+../w25qxx_flash/w25qxx.c: In function 'W25qxx_ReadBlock':
+../w25qxx_flash/w25qxx.c:914:32: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+   printf("+++w25qxx ReadBlock:%d, Offset:%d ,Read %d Bytes, begin...\r\n",Block_Address,OffsetInByte,NumByteToRead_up_to_BlockSize);
+                               ~^
+                               %ld
+../w25qxx_flash/w25qxx.c:914:43: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+   printf("+++w25qxx ReadBlock:%d, Offset:%d ,Read %d Bytes, begin...\r\n",Block_Address,OffsetInByte,NumByteToRead_up_to_BlockSize);
+                                          ~^
+                                          %ld
+../w25qxx_flash/w25qxx.c:914:52: warning: format '%d' expects argument of type 'int', but argument 4 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+   printf("+++w25qxx ReadBlock:%d, Offset:%d ,Read %d Bytes, begin...\r\n",Block_Address,OffsetInByte,NumByteToRead_up_to_BlockSize);
+                                                   ~^
+                                                   %ld
+arm-none-eabi-gcc -o "usb_flash.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\vikrantt\STM32CubeIDE\workspace_1.5.1\usb_flash\STM32L053R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="usb_flash.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: usb_flash.elf
+ 
+arm-none-eabi-objdump -h -S  usb_flash.elf  > "usb_flash.list"
+arm-none-eabi-objcopy  -O binary  usb_flash.elf  "usb_flash.bin"
+arm-none-eabi-size   usb_flash.elf 
+   text	   data	    bss	    dec	    hex	filename
+  48968	    472	   4400	  53840	   d250	usb_flash.elf
+Finished building: default.size.stdout
+ 
+Finished building: usb_flash.bin
+ 
+Finished building: usb_flash.list
+ 
