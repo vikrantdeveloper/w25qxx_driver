@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;usb_flash/w25qxx_flash/w25qxxconfig.h&apos; to &apos;w25qxxConfig.h&apos;" description="Rename resource &apos;w25qxxconfig.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="w25qxx_flash/w25qxxconfig.h" name="w25qxxConfig.h" stamp="1631157793214" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;usb_flash/w25qxx_flash/w25qxxConfig.h&apos; to &apos;w25qxxConf.h&apos;" description="Rename resource &apos;w25qxxConfig.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="w25qxx_flash/w25qxxConfig.h" name="w25qxxConf.h" stamp="1631157826084" updateReferences="true"/>
-</session>
